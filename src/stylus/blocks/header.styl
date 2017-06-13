@@ -1,0 +1,41 @@
+.header
+  overflow hidden
+  .content
+    relative false
+    padding-top 205px
+    &:before
+    &:after
+      content ''
+      display none
+      absolute false
+      background-size contain
+      background-repeat no-repeat
+    +media-query(all, min-width 1220px)
+      &:before
+        display block
+        top 370px
+        right 100%
+        margin-right 38px
+        size 899px 600px
+        retina-image("/images/header/background-left.png", contain, '@2x')
+    +media-query(all, min-width 650px)
+      &:after
+        display block
+        top 0
+        left 482px
+        size 990px 600px
+        retina-image("/images/header/background-right.png", contain, '@2x')
+  .content-block
+    max-width 480px
+    padding-bottom 60px
+  .title
+    margin-bottom 24px
+    font-size 36px
+    font-weight 400
+    line-height 40px
+    letter-spacing 0.1px
+    color $header-title-color
+  .text
+    margin-bottom 37px
+    line-height 21px
+    font-size 18px

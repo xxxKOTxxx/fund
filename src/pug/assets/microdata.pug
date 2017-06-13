@@ -1,0 +1,113 @@
+meta(
+  itemprop="name"
+  data-language-content="header-logo"
+  content!="<?= $language['header']['logo'] ?>"
+)
+meta(
+  itemprop="url"
+  content!="<?= $config['protocol'].$config['domain'] ?>"
+)
+meta(
+  itemprop="logo"
+  data-language-content="microdata-logo"
+  content!="<?= $language['microdata']['logo'] ?>"
+)
+meta(
+  itemprop="priceRange"
+  content="100грн - 5000грн"
+)
+//- Google+
+meta(
+  itemprop="name"
+  data-language-content="site-title"
+  content!="<?= $language['site']['title'] ?>"
+)
+meta(
+  itemprop="description"
+  data-language-content="site-description"
+  content!="<?= $language['site']['description'] ?>"
+)
+meta(
+  itemprop="image"
+  data-language-content="microdata-google-image"
+  content!="<?= $language['microdata']['google']['image']; ?>"
+)
+
+//- Twitter
+meta(
+  name="twitter:card"
+  content="summary"
+)
+meta(
+  name="twitter:creator"
+  content!="<?= $language['microdata']['twitter']['creator']; ?>"
+)
+
+meta(
+  name="twitter:domain"
+  content!="<?= $config['domain'] ?>"
+)
+meta(
+  name="twitter:site"
+  data-language-content="site-title"
+  content!="<?= $language['site']['title'] ?>"
+)
+meta(
+  name="twitter:title"
+  data-language-content="site-title"
+  content!="<?= $language['site']['title'] ?>"
+)
+meta(
+  name="twitter:description"
+  data-language-content="site-description"
+  content!="<?= $language['site']['description'] ?>"
+)
+meta(
+  itemprop="twitter:image:src"
+  data-language-content="microdata-twitter-image"
+  content!="<?= $language['microdata']['twitter']['image']; ?>"
+)
+
+//- Facebook
+meta(
+  property="og:type"
+  content="website"
+)
+meta(
+  property="og:url"
+  content!="<?= $config['domain'] ?>"
+)
+
+meta(
+  property="og:title"
+  data-language-content="site-title"
+  content!="<?= $language['site']['title'] ?>"
+)
+meta(
+  property="og:description"
+  data-language-content="site-description"
+  content!="<?= $language['site']['description'] ?>"
+)
+meta(
+  property="og:image"
+  data-language-content="microdata-facebook-image"
+  content!="<?= $language['microdata']['facebook']['image']; ?>"
+)
+meta(
+  property="og:image:url"
+  data-language-content="microdata-facebook-image"
+  content!="<?= $language['microdata']['facebook']['image']; ?>"
+)
+meta(
+  property="og:image:type"
+  content!="<?= $language['microdata']['facebook']['type']; ?>"
+)
+//- Изображения типа MIME. Может иметь одно из следующих значений: image/jpeg, image/gif или image/png
+meta(
+  property="og:image:width"
+  content!="<?= $language['microdata']['facebook']['width']; ?>"
+)
+meta(
+  property="og:image:height"
+  content!="<?= $language['microdata']['facebook']['height']; ?>"
+)

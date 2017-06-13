@@ -1,0 +1,117 @@
+.services
+  .heading
+    padding-top 82px
+    padding-bottom 36px
+  .title
+    margin-bottom 43px
+    font-size 30px
+    font-weight 400
+    letter-spacing 0.1px
+    color $title-color
+  .subtitle
+    font-size 19px
+    line-height 24px
+    letter-spacing 0.1px
+    color $advantages-title-color
+
+.services-blocks
+  text-align center
+  font-size 0
+.services-block
+  width 90%
+  max-width 390px
+  min-height 580px
+  relative false
+  display block
+  padding-top 17px
+  padding-bottom 162px
+  box-sizing border-box
+  margin 0 auto 36px
+  border-radius 5px
+  color $services-text-color
+  background-color $services-background-color
+  border 1px solid $services-border-color
+  +media-query(all, min-width $site-tablet-width)
+    width 33%
+    display inline-block
+    vertical-align middle
+    &:nth-of-type(1)
+    &:nth-of-type(3)
+      margin-top -30px
+    &:nth-of-type(1)
+      border-right 0 none
+      border-radius 5px 0 0 5px
+    &:nth-of-type(2)
+      width 34%
+      border-radius 5px
+    &:nth-of-type(3)
+      border-left 0 none
+      border-radius 0 5px 5px 0
+
+  .title
+    margin-bottom 18px
+    font-size 14px
+    font-weight 700
+    color $services-title-color
+  .title-description
+    margin-bottom 22px
+    font-size 12px
+  .price
+  .price-description
+    color $services-title-color
+  .price
+    margin-bottom 8px
+    font-size 25px
+  .price-description
+    margin-bottom 27px
+    font-size 15px
+  .text
+    margin-bottom 10px
+    font-size 15px
+    line-height 21px
+
+  .button-block
+    absolute false 0 0
+    padding 40px 0
+    border-top 1px solid $services-border-color
+    .button
+      width 180px
+      margin auto
+.services-additional
+  padding-bottom 50px
+  .title
+    margin-bottom 30px
+    font-size 19px
+    font-weight 300
+    letter-spacing 0.1px
+    color $advantages-title-color
+  .services-additional-block
+    padding 15px 0
+    border-top 1px solid $services-border-color
+  .additional-title
+  .features
+    display inline-block
+    vertical-align top
+  .additional-title
+    width 265px
+    padding-bottom 20px
+    padding-right 30px
+    color $services-title-color
+    .service
+      margin-top 5px
+      margin-bottom 15px
+      font-size 14px
+      font-weight 700
+    .price
+      margin-bottom 8px
+      font-size 25px
+    .description
+      font-size 15px
+      line-height 20px
+
+  .feature
+    line-height 20px
+    margin-bottom 10px
+    &:before
+      content '\2014\00a0'
+      display inline

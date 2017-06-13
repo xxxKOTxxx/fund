@@ -1,0 +1,16 @@
+section#faq.faq
+  .content.block-padding
+    h2.title(data-language="faq-title")!="<?= $language['faq']['title'] ?>"
+    .subtitle(data-language="faq-subtitle")!="<?= $language['faq']['subtitle'] ?>"
+    ul.faq-list
+      !="<? foreach($language['faq']['blocks'] as $index => $data): ?>"
+      li.faq-item.closed
+        .question(data-language!="faq-blocks-<?= $index ?>-question")!="<?= $data['question'] ?>"
+        .answer(data-language!="faq-blocks-<?= $index ?>-answer")!="<?= $data['answer'] ?>"
+        button.icon(
+          tabindex!="<?= $tabindex++; ?>"
+          type="button"
+        )
+          svg
+            use(xlink:href="#pluse")
+      !="<? endForeach; ?>"

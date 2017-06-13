@@ -1,0 +1,63 @@
+meta(charset="UTF-8")
+
+meta(
+  http-equiv="X-UA-Compatible"
+  content="IE=edge"
+)
+meta(
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+)
+
+meta(
+  http-equiv="x-dns-prefetch-control"
+  content="on"
+)
+link(
+  rel="dns-prefetch"
+  href="https://fonts.googleapis.com"
+)
+link(
+  rel="dns-prefetch"
+  href="https://ajax.googleapis.com"
+)
+link(
+  rel="dns-prefetch"
+  href="https://maps.googleapis.com"
+)
+
+//link(
+//  href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=cyrillic-ext"
+//  rel="stylesheet"
+//)
+link(
+  rel="stylesheet"
+  href!="/css/styles.css"
+)
+link(
+  rel="canonical"
+  href!="<?= $config['protocol'].$config['domain'] ?>"
+)
+link(
+  rel="alternate"
+  href!="<?= $config['protocol'].$config['domain'] ?>"
+  hreflang="x-default"
+)
+!="<? foreach($available_languages as $locale => $data): ?>"
+link(
+  rel="alternate"
+  href!="<?= $config['protocol'].$config['domain'].'/'.$locale ?>"
+  hreflang!="<?= $locale ?>"
+)
+!="<? endForeach; ?>"
+title(data-language="site-title")!="<?= $language['site']['title']; ?>"
+meta(
+  name="description"
+  content!="<?= $language['site']['description']; ?>"
+)
+meta(
+  name="keywords"
+  content!="<?= $language['site']['keywords']; ?>"
+)
+include favicon.pug
+include microdata.pug

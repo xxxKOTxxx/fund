@@ -1,0 +1,9 @@
+section.phone
+  .content.block-padding
+    h3.text
+      span(data-language="phone-text")!="<?= $language['phone']['text'] ?>"
+      a.phone-link(
+        tabindex!="<?= $tabindex++; ?>"
+        href!="<?= setLink($config['phone']['link'], 'phone') ?>"
+        title!="<?= $config['phone']['text'] ?>"
+      )!="<?= $config['phone']['text'] ?>"

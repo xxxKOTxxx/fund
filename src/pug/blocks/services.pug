@@ -1,0 +1,94 @@
+section#services.services(
+  itemscope
+  itemtype="http://schema.org/Service"
+)
+  .content.block-padding.heading
+    h2.title(data-language="services-title")!="<?= $language['services']['title'] ?>"
+    .subtitle(data-language="services-subtitle")!="<?= $language['services']['subtitle'] ?>"
+  .content.services-blocks(
+    itemscope
+    itemtype="http://schema.org/OfferCatalog"
+    itemprop="hasOfferCatalog"
+  )
+    !="<? foreach($language['services']['blocks'] as $block => $data): ?>"
+    .services-block.block-padding(
+      itemscope
+      itemtype="http://schema.org/OfferCatalog"
+      itemprop="itemListElement"
+    )
+        .offer(
+          itemscope
+          itemtype="http://schema.org/Offer"
+          itemprop="itemListElement"
+        )
+            h3.title(
+              itemprop="name"
+              data-language!="services-blocks-<?= $block ?>-title"
+            )!="<?= $data['title'] ?>"
+            .title-description(
+              itemprop="description"
+              data-language!="services-blocks-<?= $block ?>-title_description"
+            )!="<?= $data['title_description'] ?>"
+            .price
+              span(
+                itemprop="price"
+                data-language!="services-blocks-<?= $block ?>-price"
+              )!="<?= $data['price'] ?>"
+              span(
+                itemprop="priceCurrency"
+                data-language!="services-blocks-<?= $block ?>-price_currency"
+              )!="<?= $data['price_currency'] ?>"
+              span(data-language!="services-blocks-<?= $block ?>-price_time")!="<?= $data['price_time'] ?>"
+            .price-description(data-language!="services-blocks-<?= $block ?>-price_description")!="<?= $data['price_description'] ?>"
+            !="<? foreach($data['texts'] as $index => $text): ?>"
+            p.text(data-language!="services-blocks-<?= $block ?>-texts-<?= $index ?>")!="<?= $text ?>"
+            !="<? endForeach; ?>"
+            .button-block
+              button.button.modal-button(
+                type="button"
+                tabindex!="<?= $tabindex++; ?>"
+                data-target!="<?= $block ?>"
+                data-language="site-button"
+              )!="<?= $language['site']['button'] ?>"
+    !="<? endForeach; ?>"
+  .content.block-padding.services-additional(
+    itemscope
+    itemtype="http://schema.org/OfferCatalog"
+    itemprop="hasOfferCatalog"
+  )
+    h3.title(data-language="services-additional-title")!="<?= $language['services']['additional']['title'] ?>"
+    !="<? foreach($language['services']['additional']['blocks'] as $block => $data): ?>"
+    .services-additional-block(
+      itemscope
+      itemtype="http://schema.org/OfferCatalog"
+      itemprop="itemListElement"
+    )
+      .offer(
+        itemscope
+        itemtype="http://schema.org/Offer"
+        itemprop="itemListElement"
+      )
+        .additional-title
+          h4.service(
+            itemprop="name"
+            data-language!="services-additional-blocks-<?= $block ?>-service"
+          )!="<?= $data['service'] ?>"
+          .price
+            span(
+              itemprop="price"
+              data-language!="services-additional-blocks-<?= $block ?>-price"
+            )!="<?= $data['price'] ?>"
+            span(
+              itemprop="priceCurrency"
+              data-language!="services-additional-blocks-<?= $block ?>-price_currency"
+            )!="<?= $data['price_currency'] ?>"
+            span(data-language!="services-additional-blocks-<?= $block ?>-price_time")!="<?= $data['price_time'] ?>"
+          .description(
+            itemprop="description"
+            data-language!="services-additional-blocks-<?= $block ?>-description"
+          )!="<?= $data['description'] ?>"
+        ul.features
+          !="<? foreach($data['features'] as $index => $feature): ?>"
+          li.feature(itemprop="disambiguatingDescription" data-language!="services-additional-blocks-<?= $block ?>-features-<?= $index ?>")!="<?= $feature ?>"
+          !="<? endForeach; ?>"
+    !="<? endForeach; ?>"

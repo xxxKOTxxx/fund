@@ -1,0 +1,46 @@
+.phone
+  min-height 180px
+  margin-bottom 17px
+  overflow hidden
+  font-size 25px
+  font-weight 400
+  color $phone-text-color
+  background-color $phone-background-color
+  .content
+    relative false
+    line-height 170px
+    text-align center
+    padding 20px
+    &:before
+    &:after
+      content ''
+      display none
+      absolute false
+      z-index 1
+      size 900px 650px
+      background-size contain
+      background-repeat no-repeat
+    +media-query(all, min-width 980px)
+      &:before
+        display block
+        top -19px
+        right 100%
+        margin-right -62px
+        retina-image("/images/phone/background.png", contain, '@2x')
+    +media-query(all, min-width 880px)
+      &:after
+        display block
+        top -41px
+        left 720px
+        retina-image("/images/phone/background.png", contain, '@2x')
+  .text
+    relative false
+    z-index 2
+    max-width 800px
+    display inline-block
+    vertical-align middle
+    line-height 40px
+  .phone-link
+    white-space nowrap
+    font-weight 700
+    color $phone-link-color

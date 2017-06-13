@@ -1,0 +1,61 @@
+.about
+  relative false
+  min-height 580px
+  overflow hidden
+  background-color $about-background
+  font-weight 300
+  font-size 24px
+  line-height 29px
+  color $about-color
+  .content
+    relative false
+    &:before
+    &:after
+      content ''
+      display none
+      absolute false
+      z-index 0
+      background-size contain
+      background-repeat no-repeat
+    +media-query(all, min-width 1050px)
+      &:before
+        display block
+        top 30px
+        right 100%
+        margin auto
+        size 720px 650px
+        retina-image("/images/about/background-left.png", contain, '@2x')
+    +media-query(all, min-width 870px)
+      &:after
+        display block
+        top 0
+        left 677px
+        size 810px 550px
+        retina-image("/images/about/background-right.png", contain, '@2x')
+  .content-block
+    padding 68px 0
+    size 100%
+    relative false
+    z-index 1
+  .title
+    margin-bottom 50px
+    font-size 30px
+    font-weight 500
+  .text
+    margin-bottom 32px
+    &:last-of-type
+      margin-bottom 0
+.about-columns
+  width 100%
+  text-align center
+  font-size 0
+.about-column
+  display inline-block
+  vertical-align top
+  width 50%
+  margin-bottom 32px
+  box-sizing border-box
+  text-align left
+  font-size 24px
+  +media-query(all, max-width 800px)
+    width 100%

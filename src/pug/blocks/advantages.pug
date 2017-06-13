@@ -1,0 +1,11 @@
+section#advantages.advantages
+  h2.title.block-padding(data-language!="advantages-title")!="<?= $language['advantages']['title'] ?>"
+  ul.advantages-list
+    !="<? foreach($language['advantages']['list'] as $icon => $data): ?>"
+    li.advantages-item(class!="<?= $icon ?>")
+      .icon
+        svg
+          use(xlink:href!="#<?= $icon ?>")
+      h3.title(data-language!="advantages-list-<?= $icon ?>-title")!="<?= $data['title'] ?>"
+      .text(data-language!="advantages-list-<?= $icon ?>-text")!="<?= $data['text'] ?>"
+    !="<? endForeach; ?>"
