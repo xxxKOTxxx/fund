@@ -2,7 +2,6 @@ export default class Menu {
   constructor(config) {
     this.speed = config.scroll_speed;
     this.panel = $(config.panel_selector);
-    this.panel_padding = parseInt(this.panel.css('padding-top'));
     this.navigation_links = $('a[href*=\\#]');
     this.navigation_blocks = [];
     this.navigation_blocks = $.unique(
@@ -22,20 +21,27 @@ export default class Menu {
     );
     this.navigation_blocks_length = this.navigation_blocks.length;
     this.current_item = '';
-    this.scrollHandler();
     this.setMenu();
   }
 
   setMenu() {
-    $(window)
-      .on(
-        'scroll',
-        this.scrollHandler.bind(this)
-      );
     this.navigation_links.on(
       'click',
       this.anchorHandler.bind(this)
     );
+    $(window)
+      .on(
+        'popstate',
+        ()=> {
+          let hash = window.location.hash;
+          if(hash.length) {
+            this.scrollHandler($('a[href="'+ hash +'"]'), false);
+          }
+          else {
+            this.scrollToPosition(0);
+          }
+        }
+      );
   }
 
   getLinkTarget(link) {
@@ -46,21 +52,17 @@ export default class Menu {
 
   anchorHandler(event) {
     event.preventDefault();
-    let current_position = Math.ceil($(window).scrollTop());
-    let header_height = Math.floor(this.panel.height());
-
     let link = $(event.currentTarget);
-    let target = this.getLinkTarget(link);
-    let target_position = Math.floor(target.offset().top);
-    let target_padding = parseInt(target.css('padding-top'));
-    let position = target_position + target_padding - header_height;
+    this.scrollHandler(link);
+  }
+
+  scrollToPosition(position) {
+    let current_position = Math.ceil($(window).scrollTop());
     let distance = Math.abs(current_position - position);
     if(!distance) {
       return;
     }
-
     let time = distance / this.speed * 1000;
-    this.setState(link);
     $('html, body')
       .stop()
       .animate(
@@ -68,6 +70,18 @@ export default class Menu {
         time,
         'linear'
       );
+
+  }
+  scrollHandler(link, set_state = true) {
+    let target = this.getLinkTarget(link);
+    let target_position = Math.floor(target.offset().top);
+    let target_padding = parseInt(target.css('padding-top'));
+    let position = target_position + target_padding;
+
+    if(set_state) {
+      this.setState(link);
+    }
+    this.scrollToPosition(position);
   }
 
   setState(link) {
@@ -79,40 +93,6 @@ export default class Menu {
     }
   }
 
-  scrollHandler() {
-    let scroll = $(window).scrollTop();
-    this.setMenuPadding(scroll);
-    this.getMenuActive(scroll);
-  }
-
-  setMenuPadding(scroll) {
-    let padding = 0;
-
-    if(this.panel_padding > scroll) {
-      padding = this.panel_padding - scroll;
-    }
-    else {
-      if(!this.panel.hasClass('transparent')) {
-        return;
-      }
-    }
-
-    this.panel
-      .css('padding-top', padding + 'px')
-      .toggleClass('transparent', !!padding);
-    if(!this.panel.hasClass('animate')) {
-      setTimeout(
-        ()=> this.panel.addClass('animate'),
-        0
-      );
-    }
-  }
-
-  setMenuActive() {
-    this.navigation_links.removeClass('active');
-    $('a[href*=\\#' + this.current_item + ']').addClass('active');
-
-  }
   getMenuActive(scroll) {
     scroll += Math.ceil(this.panel.height() + 1);
     let current_item;

@@ -1,0 +1,61 @@
+
+.modal-shadow
+  display none
+  size 100%
+  min-width $site-min-width
+  fixed 0
+  z-index 1000
+  background-color rgba(0, 0, 0, 0.7)
+  &.show
+    display block
+
+
+
+.modal
+  width 90%
+  max-width 900px
+  min-width $site-min-width - 20px
+  padding 1.75rem
+  box-sizing border-box
+  display table
+  absolute 50% false false 50%
+  transform translate(-50%, -50%)
+  margin auto
+  background-color $modal-background
+  .close-button
+    transform rotate(45deg)
+    absolute 2.5rem 2.5rem false false
+    size 18px
+    cursor pointer
+    &:before
+    &:after
+      content ''
+      display block
+      background-color #1a66a9
+      transform rotate(-45deg)
+    &:before
+      absolute 0 false false 16px
+      size 3px 100%
+    &:after
+      absolute 16px false false 0
+      size 100% 3px
+
+.modal-content
+  padding 1.75rem
+  box-sizing border-box
+  margin auto
+  text-align left
+  border 2px solid $modal-$border-color
+
+  .link
+    font-size 1.5rem
+    font-weight 800
+    margin-bottom 2rem
+    color $text-primary-color
+
+  .text
+    p
+      margin-bottom 0.5rem
+    +media-query(all, min-width 950px)
+      column-count 2
+      column-gap 2rem

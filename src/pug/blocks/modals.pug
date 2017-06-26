@@ -1,0 +1,14 @@
+.modal-shadow
+  .modal
+    .modal-content
+      svg.close-button
+        use(xlink:href="#pluse")
+      .link(
+        data-language="kids-story"
+      )!="<?= $language['kids']['story'] ?>"
+      .text
+        !="<? foreach($language['modal']['text'] as $index => $data): ?>"
+        p(
+          data-language!="modal-text-<?= $index ?>"
+        )!="<?= $data ?>"
+        !="<? endForeach; ?>"
