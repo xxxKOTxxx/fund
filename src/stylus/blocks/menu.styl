@@ -1,0 +1,29 @@
+.navigation
+  absolute 0 0 false
+  z-index 10
+  .content
+    width 100%
+    padding 2.6rem 4rem
+    box-sizing border-box
+    display table
+    > *
+      display table-cell
+      vertical-align middle
+  .logo
+    size 128px 79px
+    retina-image("/images/logo.png", 255px 158px, '@2x')
+    background-size cover
+    background-position 50% 100%
+    background-repeat no-repeat
+  .menu
+    text-align center
+  .menu-item
+    display inline-block
+    margin 0 1.5rem
+  .menu-link
+    font-weight 800
+    font-size 1.5rem
+    color $text-light-color
+    padding-bottom 3px
+    text-decoration none
+    border-bottom 2px dotted $text-light-color

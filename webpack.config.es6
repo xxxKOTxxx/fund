@@ -92,10 +92,10 @@ const copy = new CopyWebpackPlugin([
     from: path.resolve('src/images/favicon/favicon.ico'),
     to: path.resolve('www')
   },
-  {
-    from: path.resolve('src/js/lib'),
-    to: path.resolve('www/js/lib')
-  },
+  // {
+  //   from: path.resolve('src/js/lib'),
+  //   to: path.resolve('www/js/lib')
+  // },
   {
     from: path.resolve('src/php'),
     to: path.resolve('www/php')

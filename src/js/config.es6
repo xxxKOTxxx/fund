@@ -1,6 +1,6 @@
 const config = {
   menu: {
-    panel_selector: '.menu-panel',
+    panel_selector: '.navigation',
     scroll_speed: 5000
   },
   modals: {

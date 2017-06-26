@@ -53,7 +53,6 @@ export default class Menu {
     let target = this.getLinkTarget(link);
     let target_position = Math.floor(target.offset().top);
     let target_padding = parseInt(target.css('padding-top'));
-
     let position = target_position + target_padding - header_height;
     let distance = Math.abs(current_position - position);
     if(!distance) {

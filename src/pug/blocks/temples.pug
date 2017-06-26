@@ -1,0 +1,21 @@
+section#temples.temples
+  .text-block
+    .heading(
+      data-language="temples-title"
+    )!="<?= $language['temples']['title'] ?>"
+    !="<? foreach($language['temples']['text'] as $index => $data): ?>"
+    .text(
+      data-language!="temples-text-<?= $index ?>"
+    )!="<?= $data ?>"
+    !="<? endForeach; ?>"
+    .years
+      !="<? foreach($language['temples']['years'] as $year => $data): ?>"
+      .year
+        .year-title!="<?= $year ?> "
+          span(
+            data-language="temples-year"
+          )!="<?= $language['temples']['year'] ?>"
+        .year-text(
+          data-language!="temples-years-<?= $year ?>"
+        )!="<?= $data ?>"
+      !="<? endForeach; ?>"

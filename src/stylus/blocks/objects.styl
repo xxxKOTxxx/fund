@@ -1,0 +1,53 @@
+.objects
+  .heading
+    padding-left $large-padding
+    max-width 340px
+
+.object
+  width 100%
+  display table
+  padding 1.75rem 0 4.2rem
+  box-sizing border-box
+  &:nth-of-type(even)
+    padding-right $large-padding
+    .title
+      left $object-description-width - $object-title-width
+  &:nth-of-type(odd)
+    padding-left $large-padding
+    direction rtl
+    > *
+      direction ltr
+  .image
+  .description
+    display table-cell
+    vertical-align top
+  .image
+    padding-bottom 46%
+    background-size 100% auto
+    background-position 50% 0
+    background-repeat no-repeat
+    &.temple_1
+      retina-image("/images/temple_1.jpg", 910px 608px, '@2x')
+    &.temple_2
+      retina-image("/images/temple_2.jpg", 910px 608px, '@2x')
+    &.temple_3
+      retina-image("/images/temple_3.jpg", 910px 608px, '@2x')
+    &.temple_4
+      retina-image("/images/temple_4.jpg", 910px 608px, '@2x')
+  .description
+    width $object-description-width
+    max-width $object-description-width
+  .title
+    relative false
+    width $object-title-width
+    padding 2rem
+    box-sizing border-box
+    margin-top 4.375rem
+    font-weight 800
+    font-size 1.5rem
+    line-height 2rem
+    color $text-light-color
+    background-color $block-background-color
+  .text
+    padding 0.5rem
+    box-sizing border-box

@@ -1,5 +1,6 @@
 export default class WebFont {
   constructor() {
+    this.font_link = 'https://fonts.googleapis.com/css?family=Rubik:400,800&amp;subset=cyrillic';
     this.setFont();
   }
 
@@ -17,7 +18,7 @@ export default class WebFont {
       }
       else {
         let request = new XMLHttpRequest();
-        request.open('GET', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=cyrillic-ext', true);
+        request.open('GET', this.font_link, true);
 
         request.onload = function() {
           if (request.status >= 200 && request.status < 400) {
@@ -32,7 +33,7 @@ export default class WebFont {
       let style = document.createElement('style');
       style.rel = 'stylesheet';
       document.head.appendChild(style);
-      style.href = 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=cyrillic-ext';
+      style.href = this.font_link;
     }
   }
 }

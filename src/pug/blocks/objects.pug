@@ -1,0 +1,15 @@
+section.objects
+  .heading(
+    data-language="objects-title"
+  )!="<?= $language['objects']['title'] ?>"
+  !="<? foreach($language['objects']['items'] as $index => $data): ?>"
+  .object
+    .image(class!="temple_<?= $index ?>")
+    .description
+      .title(
+        data-language!="objects-items-<?= $index ?>-title"
+      )!="<?= $language['objects']['items'][$index]['title'] ?>"
+      .text(
+      data-language!="objects-items-<?= $index ?>-text"
+      )!="<?= $language['objects']['items'][$index]['text'] ?>"
+  !="<? endForeach; ?>"

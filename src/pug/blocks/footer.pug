@@ -1,62 +1,9 @@
 footer
   .content
-    .content-block
-      .footer-block.logo-block
-        +logo
-      .footer-block.work-time-block
-        a.phone-link(
-          tabindex!="<?= $tabindex++; ?>"
-          itemprop="telephone"
-          content!="<?= $config['phone']['link'] ?>"
-          href!="<?= setLink($config['phone']['link'], 'phone') ?>"
-          title!="<?= $config['phone']['text'] ?>"
-        )!="<?= $config['phone']['text'] ?>"
-        .work-time(
-          itemscope
-          itemtype="http://schema.org/OpeningHoursSpecification"
-          itemprop="openingHoursSpecification"
-        )
-          meta(
-            itemprop="dayOfWeek"
-            content="Monday Tuesday Wednesday Thursday Friday"
-          )
-          span(data-language="footer-work_time-before")!="<?= $language['footer']['work_time']['before'] ?>"
-          time(
-            itemprop="opens"
-            datetime!="0<?= $config['work_time']['from'] ?>"
-          )!=" <?= $config['work_time']['from'] ?> "
-          span(data-language="footer-work_time-to")!="<?= $language['footer']['work_time']['to'] ?>"
-          time(
-            itemprop="closes"
-            datetime!="<?= $config['work_time']['to'] ?>"
-          )!=" <?= $config['work_time']['to'] ?> "
-          span(data-language="footer-work_time-after")!="<?= $language['footer']['work_time']['after'] ?>"
-      .footer-block.adress-block
-        a.email(
-          tabindex!="<?= $tabindex++; ?>"
-          href!="<? setLink($config['email'], 'email') ?>"
-          title!="<?= $config['email'] ?>"
-        )
-          span(
-            itemprop="email"
-          )!="<?= $config['email'] ?>"
-        address.adress(
-          itemscope
-          itemtype="http://schema.org/PostalAddress"
-          itemprop="address"
-        )
-          p
-            span(
-              itemprop="addressCountry"
-              data-language="footer-address-country"
-            )!="<?= $language['footer']['address']['country'] ?>"
-            span!=", "
-            span(
-              itemprop="addressLocality"
-              data-language="footer-address-city"
-            )!="<?= $language['footer']['address']['city'] ?>"
-          p(
-            itemprop="streetAddress"
-            data-language="footer-address-street"
-          )!="<?= $language['footer']['address']['street'] ?>"
-          p(data-language="footer-address-description")!="<?= $language['footer']['address']['description'] ?>"
+    a.email(
+      href!="<? setLink($config['email'], 'email') ?>"
+      title!="<?= $config['email'] ?>"
+    )
+      svg.email-icon
+        use(xlink:href="#email")
+      span!="<?= $config['email'] ?>"

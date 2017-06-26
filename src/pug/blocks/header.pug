@@ -1,15 +1,8 @@
-section.header#start
-  .content
-    header.content-block.block-padding
-      h1.title(
-        itemprop="description"
-        data-language="header-title"
-      )!="<?= $language['header']['title'] ?>"
-      .text(data-language="header-subtitle")!="<?= $language['header']['subtitle'] ?>"
-      button.button.hover.modal-button(
-        type="button"
-        tabindex!="<?= $tabindex++; ?>"
-        data-language="site-button"
-        data-target="header"
-      )!="<?= $language['site']['button'] ?>"
-    include advantages
+header#header.header
+  .text-block
+    .heading(
+      data-language="header-title"
+    )!="<?= $language['header']['title'] ?>"
+    .text(
+      data-language="header-text"
+    )!="<?= $language['header']['text'] ?>"

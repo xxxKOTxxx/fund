@@ -1,0 +1,20 @@
+section#founders.founders
+  .heading(
+    data-language="founders-title"
+  )!="<?= $language['founders']['title'] ?>"
+  .text(
+    data-language="founders-text"
+  )!="<?= $language['founders']['text'] ?>"
+  .founder
+    img.founder-image(
+      src="/images/klimenko.png"
+      data-language-alt="founders-name"
+      alt!="<?= $language['founders']['name'] ?>"
+    )
+    .founder-text
+      .founder-name(
+        data-language="founders-name"
+      )!="<?= $language['founders']['name'] ?>"
+      .founder-description(
+        data-language="founders-description"
+      )!="<?= $language['founders']['description'] ?>"
