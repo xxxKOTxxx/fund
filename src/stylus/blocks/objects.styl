@@ -2,18 +2,21 @@
   .heading
     padding-left $large-padding
     max-width 340px
-
+    +media-query(all, max-width $site-tablet-width)
+      text-align center
+      padding 2rem
+      margin auto
 .object
   width 100%
   display table
   padding 1.75rem 0 4.2rem
   box-sizing border-box
+  &:nth-of-type(odd)
+    padding-left $large-padding
   &:nth-of-type(even)
     padding-right $large-padding
     .title
       left $object-description-width - $object-title-width
-  &:nth-of-type(odd)
-    padding-left $large-padding
     direction rtl
     > *
       direction ltr
@@ -51,3 +54,22 @@
   .text
     padding 0.5rem
     box-sizing border-box
+  +media-query(all, max-width $site-tablet-width)
+    width 100%
+    max-width 830px
+    margin auto
+    &:nth-of-type(odd)
+    &:nth-of-type(even)
+      padding-left 2rem
+      padding-right 2rem
+    .title
+    .description
+    .image
+      margin-top 0
+      position static
+      width 100%
+      max-width 830px
+      display block
+    .image
+      padding-bottom 67%
+

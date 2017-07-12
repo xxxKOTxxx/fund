@@ -4,10 +4,11 @@
 	};
 	$cookie_time = 31556926;
 
-	$default_language = 'uk';	// Set default language
+	$default_language = 'en';	// Set default language
 	$available_languages = [	// Set available languages
     'ru' => ['ru','be','ky','ab','mo','et','lv'],
-    'uk' => 'uk'
+    'uk' => 'uk',
+    'en' => 'en'
   ];
 
 	/* Detect user language */
@@ -93,7 +94,7 @@
     if(!is_array($array)) {
       return $array;
     }
-  	if(count($array) == 2 && array_key_exists('ru', $array) && array_key_exists('uk', $array)) {
+  	if(count($array) == 3 && array_key_exists('ru', $array) && array_key_exists('uk', $array) && array_key_exists('en', $array)) {
   		return $array[$language];
   	};
   	$result = array();

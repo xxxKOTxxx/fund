@@ -1,31 +1,37 @@
 .temples
   relative false
-  height 889px
+  display table
+  width 100%
   margin-bottom 140px
-  padding-top 190px
-  box-sizing border-box
-  retina-image("/images/temples-background.jpg", 1440px 889px, '@2x')
-  background-size cover
-  background-position 50% 100%
-  background-repeat no-repeat
+  .wrap
+    size 100% 889px
+    display table-cell
+    vertical-align middle
+    box-sizing border-box
+    retina-image("/images/temples-background.jpg", 1440px 889px, '@2x')
+    background-size cover
+    background-position 50% 100%
+    background-repeat no-repeat
 
   .text-block
-    max-width 830px
     float right
     color $text-light-color
-    .title
+    .heading
     .text
+      max-width 830px
       padding-right 200px
     .text
       font-weight 800
 
   .years
-    width 830px
+    width 100%
+    max-width 830px
     absolute false 0 0 false
     z-index 1
     padding 1.3rem 1.5rem
     box-sizing border-box
     transform translateY(50%)
+    color $text-light-color
     background-color $block-background-color
   .year
     padding 1.5rem
@@ -35,3 +41,25 @@
       font-weight 800
     &-text
       line-height 1.5rem
+.temples
+  +media-query(all, max-width $site-tablet-width)
+    margin-bottom 0
+    .wrap
+      display table
+      width 100%
+    .text-block
+      height 100%
+      padding 2rem
+      display table-cell
+      vertical-align middle
+      float none
+      .heading
+      .text
+        padding-right 0
+        margin-left auto
+        margin-right auto
+    .years
+      max-width 830px
+      position static
+      margin auto
+      transform translateY(0)

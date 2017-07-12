@@ -5,6 +5,15 @@
     font-size 1.2rem
     line-height 1.7rem
     margin-bottom 2.5rem
+  +media-query(all, max-width $site-tablet-width)
+    width 100%
+    max-width 830px
+    margin auto
+    padding-left 2rem
+    padding-right 2rem
+
+    .heading
+      text-align center
 
 
 .founder
@@ -24,3 +33,14 @@
     margin-bottom 1rem
   &-description
     line-height 1.5rem
+  +media-query(all, max-width $site-tablet-width)
+    width 255px
+    margin auto
+    display block
+    &-image
+    &-text
+      display block
+      text-align center
+      padding 0
+    img
+      margin auto

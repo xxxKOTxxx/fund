@@ -1,27 +1,44 @@
-nav.navigation
+.navigation
   .content
-    a.logo(
-      href="#header"
-    )
-
-    ul.menu
-      !="<? foreach($language['menu']['items'] as $anchor => $data): ?>"
-      li.menu-item
-        a.menu-link(
-        data-language!="menu-items-<?= $anchor ?>"
-        data-language-title!="menu-items-<?= $anchor ?>"
-        href!="#<?= $anchor ?>"
-        title!="<?= $data ?>"
-        )!="<?= $data ?>"
-      !="<? endForeach; ?>"
-
-    .language-switcher
-      .menu-item
-        a.menu-link.language-link(
-          title!="<?= $language['locales']['title'] ?>"
-          href!="<?= $language['locales']['href'] ?>"
-
-          data-language-title="locales-title"
-          data-language-href="locales-href"
+    .logo-block
+      a.logo(
+        href="#header"
+      )
+    nav.menu-block
+      input#menu(
+        type="checkbox"
+      )
+      label.menu-toggle-container(
+        for="menu"
+      )
+        span.menu-title(
+          title!="<?= $language['menu']['title'] ?>"
+          data-language-title="menu-title"
         )
-          span(data-language="locales-text")!="<?= $language['locales']['text'] ?>"
+        span.menu-toggle(
+          title!="<?= $language['menu']['close_title'] ?>"
+          data-language-title="menu-close_title"
+        )
+          svg
+            use(xlink:href="#pluse")
+      ul.menu
+        !="<? foreach($language['menu']['items'] as $anchor => $data): ?>"
+        li.menu-item
+          a.menu-link(
+          data-language!="menu-items-<?= $anchor ?>"
+          data-language-title!="menu-items-<?= $anchor ?>"
+          href!="#<?= $anchor ?>"
+          title!="<?= $data ?>"
+          )!="<?= $data ?>"
+        !="<? endForeach; ?>"
+
+      .language-switcher
+        .menu-item
+          a.menu-link.language-link(
+            title!="<?= $language['locales']['title'] ?>"
+            href!="<?= $language['locales']['href'] ?>"
+            data-language-title="locales-title"
+            data-language-href="locales-href"
+          )
+            span.short(data-language="locales-text")!="<?= $language['locales']['text'] ?>"
+            span.full(data-language="locales-title")!="<?= $language['locales']['title'] ?>"

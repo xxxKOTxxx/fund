@@ -4,7 +4,6 @@ section.objects
   )!="<?= $language['objects']['title'] ?>"
   !="<? foreach($language['objects']['items'] as $index => $data): ?>"
   .object
-    .image(class!="temple_<?= $index ?>")
     .description
       .title(
         data-language!="objects-items-<?= $index ?>-title"
@@ -12,4 +11,5 @@ section.objects
       .text(
       data-language!="objects-items-<?= $index ?>-text"
       )!="<?= $language['objects']['items'][$index]['text'] ?>"
+    .image(class!="temple_<?= $index ?>")
   !="<? endForeach; ?>"

@@ -7,12 +7,22 @@
   background-position 50% 100%
   background-repeat no-repeat
   .text-block
-    width 850px
+    width 100%
+    max-width 850px
     float right
     padding 2rem 10rem 2rem 3rem
     box-sizing border-box
     border 2px solid $white
     border-right 0 none
+    transition all 0.2s linear,
+               border-color 0 linear
+    +media-query(all, max-width $site-tablet-width)
+      max-width 720px
+      text-align center
+      padding 2rem
+      float none
+      margin auto
+      border-color transparent
   .heading
     color $text-heading-color
     line-height 2.5rem

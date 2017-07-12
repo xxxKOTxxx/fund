@@ -1,32 +1,6 @@
-High priority =>
-Medium priority =>
-Low priority =>
-  email validation
-  html form validation & js disabling
 
-  map marker change
-
-  print css
-
-  css inline on build => webpack config files
-
-  SCHEMA
-    sameAs socials
-    hasMap google maps share
-
-Wait =>
-  form submit statuses translate
-
-Check =>
-  validation tests
-  crossbrowser tests
-  test microdata markup
-  test microdata socials
-
-Deploy =>
-  Google maps API key
-  Twitter account
   Email config
-  Email translate
-
-BUGS =>
+  validate
+  html5 markup
+  mobile styles
+  images compress

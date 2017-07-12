@@ -9,14 +9,23 @@
     > *
       display table-cell
       vertical-align middle
+      +media-query(all, max-width $site-tablet-width)
+        display inline-block
+  .logo-block
+    vertical-align top
   .logo
     size 128px 79px
-    retina-image("/images/logo.png", 255px 158px, '@2x')
+  .logo
+    display block
+    retina-image("/images/logo.png", 128px 79px, '@2x')
     background-size cover
     background-position 50% 100%
     background-repeat no-repeat
   .menu
     text-align center
+    display table-cell
+    vertical-align middle
+    width 100%
   .menu-item
     display inline-block
     margin 0 1.5rem
@@ -27,3 +36,121 @@
     padding-bottom 3px
     text-decoration none
     border-bottom 2px dotted $text-light-color
+
+  #menu
+    absolute -100% -100% false false
+    display none
+    +media-query(all, max-width $site-tablet-width)
+      &:checked
+        ~ .menu-toggle-container
+          .menu-toggle
+            transform scale(1) rotate(-45deg)
+            transition all 0.2s linear 0.2s
+
+          .menu-title
+            display none
+        ~ .menu
+        ~ .language-switcher
+          transform scale(1) translate(-36px, -13px)
+          max-width $menu-size
+          pointer-events auto
+          transition all 0.2s linear
+          .menu-item
+            margin-top 10px
+            transition all 0.2s linear
+          .menu-link
+            max-width $menu-size
+            max-height 30px
+            letter-spacing 0
+            transition all 0.2s linear
+            &:before
+              opacity 0
+              transition all 0.2s linear
+
+  .menu-toggle-container
+    size 36px
+    absolute 15px 0 false false
+    display none
+    cursor pointer
+    +media-query(all, max-width $site-tablet-width)
+      display block
+
+
+  .menu-toggle
+    absolute 0
+    display block
+    transform scale(0) rotate(-45deg)
+    transition all 0.2s linear
+    fill $close-color
+
+
+  .menu-block
+    relative false
+    display table-cell
+    vertical-align middle
+    +media-query(all, max-width 550px)
+      float right
+    +media-query(all, max-width $site-tablet-width)
+      padding-top 15px
+      padding-left 40px
+      margin-top 7px
+      .menu
+      .language-switcher
+        pointer-events none
+        max-width 36px
+        display block
+        margin-left auto
+        transition all 0.2s linear 0.2s
+        .menu-link
+          padding 0
+          relative false
+          display block
+          white-space nowrap
+          overflow hidden
+          max-width 36px
+          max-height 3px
+          &:before
+            content ''
+            absolute 0
+            size 100%
+            background-color $white
+            opacity 1
+            transition all 0.2s linear 0.2s
+      .language-switcher
+        width 100%
+        .menu-item:nth-of-type(1)
+          min-width 36px
+          margin-top -22px
+        .menu-link
+          .short
+            display none
+          .full
+            display block
+      .menu-item
+        display table
+
+        margin-left 0
+        margin-right 0
+        transition all 0.2s linear 0.2s
+        &:nth-of-type(1)
+        &:nth-of-type(3)
+        &:nth-of-type(5)
+          margin-top -8px
+        &:nth-of-type(2)
+        &:nth-of-type(4)
+          margin-top -8px
+      .menu-link
+        border-color transparent
+        padding-bottom 0
+        text-transform uppercase
+        letter-spacing -4px
+        transition all 0.2s linear 0.2s
+
+  .language-switcher
+    display table-cell
+    vertical-align middle
+    .menu-link
+      padding-left 0
+      padding-right 0
+      .full
+        display none

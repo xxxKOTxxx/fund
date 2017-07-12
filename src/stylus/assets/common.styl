@@ -4,7 +4,9 @@ body
   min-width $site-min-width
   min-height 100%
   box-sizing border-box
-
+html
+  +media-query(all, max-width 475px)
+    font-size 80%
 body
   relative false
   font-family 'Rubik', sans-serif
